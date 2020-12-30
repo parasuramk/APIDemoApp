@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalconOffersResponse": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AchEligibleAccountType": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Rate": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalconOffer": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalanceTransferRequest": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalanceTransfer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DestinationAccount": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Merchant": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Address": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalanceTransferHistoryRequest": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalanceTransferHistoryResponse": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CreditCardOfferRequest": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CreditCardOfferResponse": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CreditCardOffer": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CreditCardSpecialOffer": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CreditCardLoanOffer": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RefreshCacheRequest": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ErrorResponse": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BalconOffers": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AllLoansAndBalconOffers": {
+    "dataSource": "db",
+    "public": true
+  },
+  "BalanceTransferHistory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RefreshCache": {
+    "dataSource": "db",
+    "public": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "AchEligibleAccountType",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "achEligibleAccountType": {
+      "type": "string",
+      "description": "Account type eligible for ACH Transfer fullfillmentMethod ",
+      "enum": [
+        "ACCT_PYMNT_HSTRY",
+        "RELATED_ACCT_PYMNT_HSTRY",
+        "CITI_BANK_ACCT",
+        "ACCT_MANUAL_ENTERED",
+        "MANUAL_ENTERED_CITI"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

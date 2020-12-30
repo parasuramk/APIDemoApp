@@ -1,0 +1,37 @@
+{
+  "name": "BalanceTransferHistoryRequest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "required": true,
+      "description": "Account number will be an ID used to represent an account number uniquely. This could be a random number (surrogate ids) or an Id generated using any hashing algorithm. Also, this could be confined to a session or stay with an account number for its life time. "
+    },
+    "historyPeriod": {
+      "type": "number",
+      "description": "Balance Transfer History Period in Days"
+    },
+    "filterIndicator": {
+      "type": "string",
+      "required": true,
+      "description": "The indicator to the status codes."
+    },
+    "requestType": {
+      "type": "string",
+      "description": "Request Type",
+      "enum": [
+        "LOAN_OFFER",
+        "BALCON_OFFER"
+      ],
+      "example": "LOAN_OFFER"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

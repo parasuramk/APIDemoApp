@@ -1,0 +1,18 @@
+{
+  "name": "CreditCardOfferRequest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "description": "Account number will be an ID used to represent an account number uniquely. This could be a random number (surrogate ids) or an Id generated using any hashing algorithm. Also, this could be confined to a session or stay with an account number for its life time. "
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

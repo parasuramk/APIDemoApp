@@ -1,0 +1,187 @@
+{
+  "name": "BalconOffer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "activationType": {
+      "type": "string",
+      "description": "Type of activation required."
+    },
+    "activeTargetCreditLineAmount": {
+      "type": "number",
+      "description": "Maximum credit line that will be granted for doing a balance transfer (ATCL amount).",
+      "format": "double"
+    },
+    "activeTargetCreditLineexpiredDate": {
+      "type": "string",
+      "description": "Expired Date of activeTargetCreditLine",
+      "format": "date"
+    },
+    "availableAmountToTransfer": {
+      "type": "number",
+      "description": "Total Available Amount for Balance Transfer from ATCL and ITCL amounts",
+      "format": "double"
+    },
+    "ratePricingStrategy": {
+      "type": "string",
+      "description": "PricingStrategy for determining the rate",
+      "enum": [
+        "CYCLE_DEBIT_AMOUNT",
+        "PAYMENT_AMOOUNT",
+        "SEGMENT_BALANCE",
+        "NUMBER_OF_DEBITS",
+        "ANNUAL_DEBIT_AMOUNT",
+        "FULL_BALANCE_TIERED",
+        "TIERED_BALANCE",
+        "FULL_BALANCE_FIXED",
+        "NON_TIERED"
+      ]
+    },
+    "interimRateFlag": {
+      "type": "boolean",
+      "description": "Whether Interim Rate is applicable"
+    },
+    "validOfferFlag": {
+      "type": "boolean",
+      "description": "This flag is set based on certain criteria and offer is valid or not based on this flag"
+    },
+    "maximumFee": {
+      "type": "number",
+      "description": "Maximum  balcon fee Amount if applicable, otherwise it is zero"
+    },
+    "minimumFee": {
+      "type": "number",
+      "description": "Minimum  balcon fee Amount if applicable, otherwise it is zero"
+    },
+    "feePercentage": {
+      "type": "string",
+      "description": "Displays the fee percentage that will be charged on the selected offer."
+    },
+    "inactiveTargetCreditLineAmount": {
+      "type": "number",
+      "description": "Maximum credit line that will be granted when the inActive Target Credit Line expires (ITCL amount). This maximum amount will always be less than the Active Target Credit Line.",
+      "format": "double"
+    },
+    "inactiveTargetCreditLineExpiredDate": {
+      "type": "string",
+      "description": "The date the Inactive Target Credit Line will expire.",
+      "format": "date"
+    },
+    "lastDateToTransfer": {
+      "type": "string",
+      "description": "Displays the last date the customer can transfer in additional balances.",
+      "format": "date"
+    },
+    "offerCode": {
+      "type": "string",
+      "description": "This is 6 digit Balance Segment Offer Source Code"
+    },
+    "monetaryCategory": {
+      "type": "string",
+      "description": "This field displays the monetary category for the offer such as 'C'ash or 'P'urchase."
+    },
+    "qualificationOption": {
+      "type": "string",
+      "description": "This field will indicate if the offer has a Monthly Qualification, Cap, Sales Contingent or Sales Duration offer."
+    },
+    "offerFeeFlag": {
+      "type": "boolean",
+      "description": "Indicates whether offer has a fee associated with the balcon"
+    },
+    "offerDuration": {
+      "type": "string",
+      "description": "Duration of the specific balance transfer offer"
+    },
+    "offerEndDate": {
+      "type": "string",
+      "description": "This data element deals with Balcon end  duration",
+      "format": "date"
+    },
+    "offerSegmentId": {
+      "type": "string",
+      "description": "The Segment transfer for the offer(s) post into"
+    },
+    "offerStartDate": {
+      "type": "string",
+      "description": "Date the offer was posted on the account.",
+      "format": "date"
+    },
+    "offerType": {
+      "type": "string",
+      "description": "This field displays the type of balance transfer offer for the processed Balance Transfer selected"
+    },
+    "offerStatusCode": {
+      "type": "string",
+      "description": "Offer Status Codes",
+      "enum": [
+        "ACTIVATED",
+        "CLOSED",
+        "EXPIRED",
+        "PAYDOWN",
+        "SOLICITED"
+      ]
+    },
+    "offerCategory": {
+      "type": "string",
+      "description": "This field gives offer category"
+    },
+    "offerChannelAvailablityInd": {
+      "type": "string",
+      "description": "Available channels for the balcon offer",
+      "enum": [
+        "EXCLUDE_ALL",
+        "EXCLUDE_CUSTOMERSERVICE",
+        "EXCLUDE_INTERNET",
+        "EXCLUDE_NEW_INTERNET_PAGES",
+        "EXCLUDE_OLD_INTERNET_PAGES",
+        "ONLY_NBS_PALETTE",
+        "NO_EXCLUSION"
+      ]
+    },
+    "responseLastDate": {
+      "type": "string",
+      "description": "Last Date the customer has to respond to the offer (it will be earlier than offerEnd date)",
+      "format": "date"
+    },
+    "riskBasedPricingDate": {
+      "type": "string",
+      "description": "Risk Based Pricing Date ",
+      "format": "date"
+    },
+    "riskBasedPricingReason": {
+      "type": "string",
+      "description": ""
+    },
+    "ruleDescription": {
+      "type": "string",
+      "description": "The English description for the rule that applies for the offer you selected."
+    },
+    "ruleNumber": {
+      "type": "number",
+      "description": "This field displays the rule number for a specific offer."
+    },
+    "solicitationExpirationDate": {
+      "type": "string",
+      "description": "Date that the solicitation expires and will no longer be available.",
+      "format": "date"
+    },
+    "fullfillmentMethods": {
+      "type": []
+    },
+    "achEligibleAccountTypes": {
+      "type": []
+    },
+    "rate": {
+      "type": [
+        "Rate"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

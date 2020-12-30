@@ -1,0 +1,19 @@
+{
+  "name": "RefreshCacheRequest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cardAccountNumber": {
+      "type": "string",
+      "description": "Unique card Account Number for each customer.",
+      "example": "123"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

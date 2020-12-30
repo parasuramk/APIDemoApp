@@ -1,0 +1,37 @@
+{
+  "name": "CreditCardLoanOffer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "remainingLoanTerm": {
+      "type": "number",
+      "description": "Duration of term that is still left to be covered"
+    },
+    "installmentAmount": {
+      "type": "number",
+      "description": "Amount of loan payment",
+      "format": "double"
+    },
+    "loanTerms": {
+      "type": [
+        "integer"
+      ]
+    },
+    "minimumLoanAmount": {
+      "type": "number",
+      "description": "Eligible: minimum loan amount",
+      "format": "double"
+    },
+    "returnCreditAppliedFlag": {
+      "type": "string",
+      "description": "Return Credit Applied. Backend Field Values will be 'Y' or BLANK."
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

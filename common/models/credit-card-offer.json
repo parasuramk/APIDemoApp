@@ -1,0 +1,375 @@
+{
+  "name": "CreditCardOffer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "activationType": {
+      "type": "string",
+      "description": "Type of activation required."
+    },
+    "activeTargetCreditLineAmount": {
+      "type": "number",
+      "description": "Maximum credit line that will be granted for doing a balance transfer (ATCL amount).",
+      "format": "double"
+    },
+    "activeTargetCreditLineexpiredDate": {
+      "type": "string",
+      "description": "Expired Date of activeTargetCreditLine",
+      "format": "date"
+    },
+    "availableAmountToTransfer": {
+      "type": "number",
+      "description": "Total Available Amount for Balance Transfer from ATCL and ITCL amounts",
+      "format": "double"
+    },
+    "ratePricingStrategy": {
+      "type": "string",
+      "description": "PricingStrategy for determining the rate",
+      "enum": [
+        "CYCLE_DEBIT_AMOUNT",
+        "PAYMENT_AMOOUNT",
+        "SEGMENT_BALANCE",
+        "NUMBER_OF_DEBITS",
+        "ANNUAL_DEBIT_AMOUNT",
+        "FULL_BALANCE_TIERED",
+        "TIERED_BALANCE",
+        "FULL_BALANCE_FIXED",
+        "NON_TIERED"
+      ]
+    },
+    "interimRateFlag": {
+      "type": "boolean",
+      "description": "Whether Interim Rate is applicable"
+    },
+    "postOnlyFlag": {
+      "type": "boolean",
+      "description": "The flag specifies if the offer is for post only or marketing purposes only"
+    },
+    "validOfferFlag": {
+      "type": "boolean",
+      "description": "This flag is set based on certain criteria and offer is valid or not based on this flag"
+    },
+    "maximumFee": {
+      "type": "number",
+      "description": "Maximum  balcon fee Amount if applicable, otherwise it is zero"
+    },
+    "minimumFee": {
+      "type": "number",
+      "description": "Minimum  balcon fee Amount if applicable, otherwise it is zero"
+    },
+    "feePercentage": {
+      "type": "string",
+      "description": "Displays the fee percentage that will be charged on the selected offer."
+    },
+    "inactiveTargetCreditLineAmount": {
+      "type": "number",
+      "description": "Maximum credit line that will be granted when the inActive Target Credit Line expires (ITCL amount). This maximum amount will always be less than the Active Target Credit Line.",
+      "format": "double"
+    },
+    "inactiveTargetCreditLineExpiredDate": {
+      "type": "string",
+      "description": "The date the Inactive Target Credit Line will expire.",
+      "format": "date"
+    },
+    "lastDateToTransfer": {
+      "type": "string",
+      "description": "Displays the last date the customer can transfer in additional balances.",
+      "format": "date"
+    },
+    "offerCode": {
+      "type": "string",
+      "description": "This is 6 digit Balance Segment Offer Source Code"
+    },
+    "monetaryCategory": {
+      "type": "string",
+      "description": "This field displays the monetary category for the offer such as 'C'ash or 'P'urchase."
+    },
+    "qualificationOption": {
+      "type": "string",
+      "description": "This field will indicate if the offer has a Monthly Qualification, Cap, Sales Contingent or Sales Duration offer."
+    },
+    "offerFeeFlag": {
+      "type": "boolean",
+      "description": "Indicates whether offer has a fee associated with the balcon"
+    },
+    "offerDuration": {
+      "type": "string",
+      "description": "Duration of the specific balance transfer offer"
+    },
+    "offerEndDate": {
+      "type": "string",
+      "description": "This data element deals with Balcon end  duration",
+      "format": "date"
+    },
+    "offerSegmentId": {
+      "type": "string",
+      "description": "The Segment transfer for the offer(s) post into"
+    },
+    "offerStartDate": {
+      "type": "string",
+      "description": "Date the offer was posted on the account.",
+      "format": "date"
+    },
+    "offerType": {
+      "type": "string",
+      "description": "This field displays the type of balance transfer offer for the processed Balance Transfer selected"
+    },
+    "offerStatusCode": {
+      "type": "string",
+      "description": "Offer Status Codes",
+      "enum": [
+        "ACTIVATED",
+        "CLOSED",
+        "EXPIRED",
+        "PAYDOWN",
+        "SOLICITED"
+      ]
+    },
+    "offerCategory": {
+      "type": "string",
+      "description": "This field gives offer category"
+    },
+    "offerChannelAvailabilityInd": {
+      "type": "string",
+      "description": "Available channels for the balcon offer",
+      "enum": [
+        "EXCLUDE_ALL",
+        "EXCLUDE_CUSTOMERSERVICE",
+        "EXCLUDE_INTERNET",
+        "EXCLUDE_NEW_INTERNET_PAGES",
+        "EXCLUDE_OLD_INTERNET_PAGES",
+        "ONLY_NBS_PALETTE",
+        "NO_EXCLUSION"
+      ]
+    },
+    "responseLastDate": {
+      "type": "string",
+      "description": "Last Date the customer has to respond to the offer (it will be earlier than offerEnd date)",
+      "format": "date"
+    },
+    "riskBasedPricingDate": {
+      "type": "string",
+      "description": "Risk Based Pricing Date",
+      "format": "date"
+    },
+    "riskBasedPricingReason": {
+      "type": "string",
+      "description": ""
+    },
+    "solicitationExpirationDate": {
+      "type": "string",
+      "description": "Date that the solicitation expires and will no longer be available.",
+      "format": "date"
+    },
+    "fulfillmentMethods": {
+      "type": []
+    },
+    "achEligibleAccountTypes": {
+      "type": []
+    },
+    "rate": {
+      "type": [
+        "Rate"
+      ]
+    },
+    "creditCardLoanOffer": {
+      "type": "CreditCardLoanOffer",
+      "properties": {
+        "remainingLoanTerm": {
+          "description": "Duration of term that is still left to be covered",
+          "type": "integer"
+        },
+        "installmentAmount": {
+          "description": "Amount of loan payment",
+          "type": "number",
+          "format": "double"
+        },
+        "loanTerms": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "minimumLoanAmount": {
+          "description": "Eligible: minimum loan amount",
+          "type": "number",
+          "format": "double"
+        },
+        "returnCreditAppliedFlag": {
+          "type": "string",
+          "description": "Return Credit Applied. Backend Field Values will be 'Y' or BLANK."
+        }
+      }
+    },
+    "creditCardSpecialOffer": {
+      "type": "CreditCardSpecialOffer",
+      "properties": {
+        "englishRuleDescription": {
+          "type": "string",
+          "description": "The English description for the rule that applies for the offer you selected."
+        },
+        "spanishRuleDescription": {
+          "type": "string",
+          "description": "The Spanish description for the rule that applies for the offer you selected."
+        },
+        "ruleNumber": {
+          "type": "number",
+          "description": "This field displays the rule number for a specific offer."
+        }
+      }
+    },
+    "recordType": {
+      "type": "string",
+      "description": "An indicator which says whether its a balance segment or an Offer segment"
+    },
+    "reliabilityAprRateIndex": {
+      "type": "string",
+      "description": "This index refers to the quality and reliability index of the customer.The values of this field varies from 1 to 9 and it tells whether the customer is in delinquent or punitive rate. "
+    },
+    "offerGroup": {
+      "type": "string",
+      "description": "This field type of offer group such as Loan, Special Offers and Balcon",
+      "enum": [
+        "LOAN",
+        "BALCON",
+        "SPECIAL_PURPOSE_LENDING",
+        "STANDARD_PURCHASE",
+        "CASH_SEGMENT",
+        "GRANDFATHER",
+        "PROTECTED_SEGMENT",
+        "FEATURE_SEGMENT",
+        "LOAN_ON_YOUR_CARD"
+      ]
+    },
+    "capAmount": {
+      "type": "number",
+      "description": "This is the Maximum amount you can get for this offer",
+      "format": "BigDecimal",
+      "example": "10000"
+    },
+    "remainingCapAmount": {
+      "type": "number",
+      "description": "This refers to the amount remaining towards the Cap Amount.",
+      "format": "BigDecimal",
+      "example": "8000"
+    },
+    "goToBalanceSegmentId": {
+      "type": "string",
+      "description": "It would be the balance segment identifier that current balance will move to when current balance segment expires."
+    },
+    "totalBalanceAmount": {
+      "type": "number",
+      "description": "Balance Amount remaining in the loan to be paid off i.e current loan amount",
+      "format": "double"
+    },
+    "originalOfferAmount": {
+      "type": "number",
+      "description": "Amount of loan i.e original loan/ offer amount",
+      "format": "double"
+    },
+    "outstandingInterestAmount": {
+      "type": "number",
+      "description": "Current Interest amount for the balance segment",
+      "format": "double"
+    },
+    "outstandingPrincipleAmount": {
+      "type": "number",
+      "description": "Current principle amount for the balance segment",
+      "format": "double"
+    },
+    "delinquentInterestAmount": {
+      "type": "number",
+      "description": "Delinquent interest amount for the balance segment",
+      "format": "double"
+    },
+    "delinquentPrincipleAmount": {
+      "type": "number",
+      "description": "Delinquent principal amount for the balance segment",
+      "format": "double"
+    },
+    "delinquencyFeeAmount": {
+      "type": "number",
+      "description": "delinquent transaction fee for the balance segment applicable for Balance Transfers and not for Loan",
+      "format": "double"
+    },
+    "historyId": {
+      "type": "string",
+      "description": "The history identification number"
+    },
+    "offerDescription": {
+      "type": "string",
+      "description": "The offer description."
+    },
+    "minimumDueTotalAmount": {
+      "type": "number",
+      "description": "Total Minimum due amount per month ",
+      "format": "double"
+    },
+    "preAuthorizationStatus": {
+      "type": "string",
+      "description": "This field contains values 01-60 that gives pre authorization status as to whether customer is eligible for loan or balance transfer "
+    },
+    "lastStatementTotalBalance": {
+      "type": "number",
+      "description": "Last Statement Balance amount on the account",
+      "format": "double"
+    },
+    "lastStatementMinPaymentDue": {
+      "type": "number",
+      "description": "Last Statement Minimum Payment Due Amount",
+      "format": "double"
+    },
+    "averageDailyBalanceAmount": {
+      "type": "number",
+      "description": "Current average daily balance amount for segment group. This field is calculated daily and represents the balance (debits) multiplied by the number of remaining interest days in the billing period",
+      "format": "double"
+    },
+    "lastStatementDelinquentAmount": {
+      "type": "number",
+      "description": "Last Statement Delinquent amount",
+      "format": "double"
+    },
+    "stmtActionNotificationType": {
+      "type": "string",
+      "description": "Statement Action Notification will notify the pricing reduction or change on APR",
+      "enum": [
+        "NO_MESSAGE",
+        "REGULAR_NOTIFICATION_APR",
+        "POSITIVE_SPIN_NOTIFICATION",
+        "REGULAR_NOTIFICATION_CURE",
+        "OTHER"
+      ]
+    },
+    "openDisputeCount": {
+      "type": "number",
+      "description": "This field will give number of open disputes related to this balance segment"
+    },
+    "feeAmount": {
+      "type": "number",
+      "description": "Remaining balance of unpaid fee",
+      "format": "BigDecimal"
+    },
+    "minimumDueInterestAmount": {
+      "type": "number",
+      "description": "interest amount portion of the total unpaid minimum due of this balance",
+      "format": "BigDecimal"
+    },
+    "minimumDuePrincipleAmount": {
+      "type": "number",
+      "description": "principle amount portion of the total unpaid minimum due of this balance",
+      "format": "BigDecimal"
+    },
+    "minimumDueFeeAmount": {
+      "type": "number",
+      "description": "fee amount portion of the total unpaid minimum due of this balance",
+      "format": "BigDecimal"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

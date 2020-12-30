@@ -1,0 +1,26 @@
+{
+  "name": "CreditCardSpecialOffer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "englishRuleDescription": {
+      "type": "string",
+      "description": "The English description for the rule that applies for the offer you selected."
+    },
+    "spanishRuleDescription": {
+      "type": "string",
+      "description": "The Spanish description for the rule that applies for the offer you selected."
+    },
+    "ruleNumber": {
+      "type": "number",
+      "description": "This field displays the rule number for a specific offer."
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

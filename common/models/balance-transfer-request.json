@@ -1,0 +1,143 @@
+{
+  "name": "BalanceTransferRequest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "description": "Account number will be an ID used to represent an account number uniquely. This could be a random number (surrogate ids) or an Id generated using any hashing algorithm. Also, this could be confined to a session or stay with an account number for its life time. "
+    },
+    "accountRoleType": {
+      "type": "number",
+      "description": "Customer Account Relationship Type."
+    },
+    "otpAuthenticationIndicator": {
+      "type": "string",
+      "description": "This will be used as OTP Authentication Indicatior. Valid values - 'Y' or null."
+    },
+    "destinationAccount": {
+      "type": "DestinationAccount",
+      "properties": {
+        "bankRouteCode": {
+          "description": "ABA number (also known as routing number or routing transfer number)",
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "This is the Demand Deposit Account number used along with routing number for ACH transfer"
+        },
+        "cardNumber": {
+          "type": "string",
+          "description": "Credit Card Number associated with the account"
+        }
+      }
+    },
+    "merchant": {
+      "type": "Merchant",
+      "required": true,
+      "properties": {
+        "merchantAccountNumber": {
+          "description": "Merchant Account Number",
+          "type": "string"
+        },
+        "merchantName": {
+          "description": "Name of the Merchant",
+          "type": "string",
+          "example": "BankofAmerica"
+        },
+        "merchantId": {
+          "description": "Unique identifier associated with merchant",
+          "type": "string"
+        },
+        "address": {
+          "properties": {
+            "addressLine1": {
+              "description": "Address Line 1",
+              "type": "string"
+            },
+            "addressLine2": {
+              "description": "Address Line 2",
+              "type": "string"
+            },
+            "city": {
+              "description": "Merchant City",
+              "type": "string"
+            },
+            "state": {
+              "description": "Merchant State",
+              "type": "string"
+            },
+            "postalCode": {
+              "description": "Merchant Zip Code",
+              "type": "string"
+            }
+          },
+          "$ref": "#/definitions/Address"
+        }
+      }
+    },
+    "balanceTransfer": {
+      "type": "BalanceTransfer",
+      "required": true,
+      "properties": {
+        "transferAmount": {
+          "description": "Balance transfer amount",
+          "type": "number",
+          "example": "1100.20"
+        },
+        "feeAmount": {
+          "description": "Balcon Fee Amount",
+          "type": "number",
+          "example": "1100.20"
+        },
+        "duplicateTransferOverrideFlag": {
+          "description": "Flag to override duplicate balcon transfer",
+          "type": "boolean"
+        },
+        "trackingCode": {
+          "description": "Balance Transfer code based on source indicator",
+          "type": "string"
+        },
+        "offerCode": {
+          "description": "This field displays the Offer Code unique to the offer.",
+          "type": "string"
+        },
+        "fullfillmentMethod": {
+          "type": "string",
+          "enum": [
+            "DIRECT_CHECK",
+            "ACH_TRANSFER",
+            "CREDITOR_TRANSFER"
+          ],
+          "description": "This field displays the valid fullfillment methods available for that offer."
+        },
+        "achEligibleAccountType": {
+          "description": "Account type eligible for ACH Transfer fullfillmentMethod ",
+          "type": "string",
+          "enum": [
+            "ACCT_PYMNT_HSTRY",
+            "RELATED_ACCT_PYMNT_HSTRY",
+            "CITI_BANK_ACCT",
+            "ACCT_MANUAL_ENTERED",
+            "MANUAL_ENTERED_CITI"
+          ]
+        },
+        "loanTerm": {
+          "description": "Duration of loan",
+          "type": "integer"
+        },
+        "installmentAmount": {
+          "description": "Amount of loan payment",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

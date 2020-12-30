@@ -1,0 +1,19 @@
+{
+  "name": "CreditCardOfferResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "creditCardOffer": {
+      "type": [
+        "CreditCardOffer"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

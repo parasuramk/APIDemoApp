@@ -1,0 +1,19 @@
+{
+  "name": "BalconOffersResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "balconOffer": {
+      "type": [
+        "BalconOffer"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

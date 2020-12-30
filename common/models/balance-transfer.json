@@ -1,0 +1,67 @@
+{
+  "name": "BalanceTransfer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "transferAmount": {
+      "type": "number",
+      "required": true,
+      "description": "Balance transfer amount",
+      "example": "1100.20"
+    },
+    "feeAmount": {
+      "type": "number",
+      "description": "Balcon Fee Amount",
+      "example": "1100.20"
+    },
+    "duplicateTransferOverrideFlag": {
+      "type": "boolean",
+      "description": "Flag to override duplicate balcon transfer"
+    },
+    "trackingCode": {
+      "type": "string",
+      "description": "Balance Transfer code based on source indicator"
+    },
+    "offerCode": {
+      "type": "string",
+      "required": true,
+      "description": "This field displays the Offer Code unique to the offer."
+    },
+    "fullfillmentMethod": {
+      "type": "string",
+      "required": true,
+      "description": "This field displays the valid fullfillment methods available for that offer.",
+      "enum": [
+        "DIRECT_CHECK",
+        "ACH_TRANSFER",
+        "CREDITOR_TRANSFER"
+      ]
+    },
+    "achEligibleAccountType": {
+      "type": "string",
+      "description": "Account type eligible for ACH Transfer fullfillmentMethod ",
+      "enum": [
+        "ACCT_PYMNT_HSTRY",
+        "RELATED_ACCT_PYMNT_HSTRY",
+        "CITI_BANK_ACCT",
+        "ACCT_MANUAL_ENTERED",
+        "MANUAL_ENTERED_CITI"
+      ]
+    },
+    "loanTerm": {
+      "type": "number",
+      "description": "Duration of loan"
+    },
+    "installmentAmount": {
+      "type": "number",
+      "description": "Amount of loan payment"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

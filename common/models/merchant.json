@@ -1,0 +1,53 @@
+{
+  "name": "Merchant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "merchantAccountNumber": {
+      "type": "string",
+      "required": true,
+      "description": "Merchant Account Number"
+    },
+    "merchantName": {
+      "type": "string",
+      "description": "Name of the Merchant",
+      "example": "BankofAmerica"
+    },
+    "merchantId": {
+      "type": "string",
+      "description": "Unique identifier associated with merchant"
+    },
+    "address": {
+      "type": "Address",
+      "properties": {
+        "addressLine1": {
+          "description": "Address Line 1",
+          "type": "string"
+        },
+        "addressLine2": {
+          "description": "Address Line 2",
+          "type": "string"
+        },
+        "city": {
+          "description": "Merchant City",
+          "type": "string"
+        },
+        "state": {
+          "description": "Merchant State",
+          "type": "string"
+        },
+        "postalCode": {
+          "description": "Merchant Zip Code",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

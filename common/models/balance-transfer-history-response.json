@@ -1,0 +1,17 @@
+{
+  "name": "BalanceTransferHistoryResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "BalanceTransferHistoryDetails": {
+      "type": []
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

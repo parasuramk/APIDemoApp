@@ -1,0 +1,42 @@
+{
+  "name": "ErrorResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true,
+      "description": "Invalid - Request did not confirm to the specification and was unprocessed and rejected. Please fix the value and try again ",
+      "enum": [
+        "error",
+        "warn",
+        "invalid",
+        "fatal"
+      ]
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "description": "Error code which qualifies the error"
+    },
+    "details": {
+      "type": "string",
+      "description": "Human readable explanation specific to the occurrence of the problem"
+    },
+    "location": {
+      "type": "string",
+      "description": "The name of the field that resulted in the error"
+    },
+    "moreInfo": {
+      "type": "string",
+      "description": "URI to human readable documentation of the error"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

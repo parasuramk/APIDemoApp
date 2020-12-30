@@ -1,0 +1,34 @@
+{
+  "name": "Address",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "addressLine1": {
+      "type": "string",
+      "description": "Address Line 1"
+    },
+    "addressLine2": {
+      "type": "string",
+      "description": "Address Line 2"
+    },
+    "city": {
+      "type": "string",
+      "description": "Merchant City"
+    },
+    "state": {
+      "type": "string",
+      "description": "Merchant State"
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Merchant Zip Code"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

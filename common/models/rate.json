@@ -1,0 +1,76 @@
+{
+  "name": "Rate",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "annualPercentageRate": {
+      "type": "number",
+      "description": "Annual Percentage Rate for the balance."
+    },
+    "annualPercentageRateIndex": {
+      "type": "string",
+      "description": "Abbreviation of how the prime/libor rate is updated"
+    },
+    "balanceCutOff": {
+      "type": "number",
+      "description": "balance cut off for the Tier rate, if tier rate applicable"
+    },
+    "rateCode": {
+      "type": "string",
+      "description": "Rate Id"
+    },
+    "rateSign": {
+      "type": "string",
+      "description": "Rate Sign .Sample value: +, - based on spread less than or greater than 0"
+    },
+    "rateSpread": {
+      "type": "number",
+      "description": "Rate Spread "
+    },
+    "rateType": {
+      "type": "string",
+      "description": "Rate type",
+      "enum": [
+        "FIXED",
+        "VARIABLE"
+      ]
+    },
+    "rateTier": {
+      "type": "string",
+      "description": "Tier Rate types",
+      "enum": [
+        "TIER1",
+        "TIER2",
+        "TIER3",
+        "GOTO_RATE",
+        "DELINQUENT",
+        "INTRO",
+        "BASE",
+        "INTERIM"
+      ]
+    },
+    "acquisitionOfferIndicator": {
+      "type": "string",
+      "description": "This indicates when the promotional offer is applied i.e at acquisition time(initial card setup time) or later. Values are Y(Acquisition Offer), N(ECM Offer), NULL."
+    },
+    "aprExpirationDate": {
+      "type": "string",
+      "description": "The date at which Annual percentage rate Expires",
+      "format": "date",
+      "example": "2017-02-04"
+    },
+    "aprStartDate": {
+      "type": "string",
+      "description": "The date at which Promotional Annual percentage rate starts",
+      "format": "date",
+      "example": "2017-02-04"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

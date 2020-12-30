@@ -1,0 +1,26 @@
+{
+  "name": "DestinationAccount",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bankRouteCode": {
+      "type": "string",
+      "description": "ABA number (also known as routing number or routing transfer number)"
+    },
+    "accountNumber": {
+      "type": "string",
+      "description": "This is the Demand Deposit Account number used along with routing number for ACH transfer"
+    },
+    "cardNumber": {
+      "type": "string",
+      "description": "Credit Card Number associated with the account"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
