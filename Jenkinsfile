@@ -4,7 +4,7 @@ pipeline {
     stage('SonarQube analysis') {
       agent any
       steps {
-        withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'APIDemoApp')
+        withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonar')
       }
     }
 
