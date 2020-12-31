@@ -4,16 +4,9 @@ pipeline {
     stage('SonarQube analysis') {
       agent any
       steps {
-        withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonar')
-      }
-    }
-
-    stage('Quality Gate') {
-      steps {
-        timeout(time: 1, unit: 'HOURS') {
-          waitForQualityGate(credentialsId: 'APIDemoApp', abortPipeline: true)
-        }
-
+        sh '''def sonarqubeScannerHome = tool name: \'sonar\', type: \'hudson.plugins.sonar.SonarRunnerInstallation\'
+sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://34.126.117.238:9000/ -Dsonar.login=admin -Dsonar.password=Passw0rd -Dsonar.projectKey=APIDemoApp
+'''
       }
     }
 
