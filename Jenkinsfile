@@ -12,8 +12,10 @@ pipeline {
     }
     stage("Quality Gate") {
       steps {
-        timeout(time: 5, unit: 'MINUTES') {
-          waitForQualityGate abortPipeline: true
+        withCredentials([string(credentialsId: 'sonar')]) {
+          timeout(time: 5, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
+          }
         }
       }
     }
